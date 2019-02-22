@@ -24,6 +24,7 @@
         "iso_checksum_type": "{{user `iso_checksum_type`}}",
         "iso_url": "{{user `iso_url`}}",
         "type": "hyperv-iso",
+        "switch_name": "Ethernet",
         "vm_name": "windows_10",
         "winrm_password": "Password",
         "winrm_timeout": "{{user `winrm_timeout`}}",

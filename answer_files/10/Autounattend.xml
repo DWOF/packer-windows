@@ -231,6 +231,7 @@
                 
                 
                 <!-- END WITH WINDOWS UPDATES -->
+                
             </FirstLogonCommands>
             <ShowWindowsLive>false</ShowWindowsLive>
         </component>
