@@ -15,7 +15,8 @@
           "./scripts/enable-winrm.ps1",
           "./scripts/microsoft-updates.bat",
           "./scripts/win-updates.ps1",
-          "./scripts/MDT.ps1"
+          "./scripts/MDT.ps1",
+          "./scripts/WSUS.reg"
         ],
         "guest_additions_mode": "disable",
         "headless": "{{user `headless`}}",

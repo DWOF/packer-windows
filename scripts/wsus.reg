@@ -1,0 +1,22 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+"WUServer"="https://qahwsus01.pht-master.xports.nhs.uk:8531"
+"WUStatusServer"="https://qahwsus01.pht-master.xports.nhs.uk:8531"
+"TargetGroupEnabled"=dword:00000001
+"TargetGroup"="RichClient - Rebuild"
+"ElevateNonAdmins"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
+"UseWUServer"=dword:00000001
+"IncludeRecommendedUpdates"=dword:00000001
+"NoAutoUpdate"=dword:00000000
+"AUOptions"=dword:00000003
+"ScheduledInstallDay"=dword:00000000
+"ScheduledInstallTime"=dword:00000004
+"DetectionFrequencyEnabled"=dword:00000001
+"DetectionFrequency"=dword:00000002
+"NoAutoRebootWithLoggedOnUsers"=dword:00000000
+"RebootWarningTimeoutEnabled"=dword:00000001
+"RebootWarningTimeout"=dword:00000005
+

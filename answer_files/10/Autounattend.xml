@@ -208,7 +208,12 @@
                 <!-- END WITHOUT WINDOWS UPDATES -->
                 <!-- WITH WINDOWS UPDATES -->
  
-                
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cmd.exe /c reg import a:\wsus.reg</CommandLine>
+                    <Order>97</Order>
+                    <Description>Enable WSUS Updates</Description>
+                </SynchronousCommand>
+
                 <SynchronousCommand wcm:action="add">
                     <CommandLine>cmd.exe /c a:\microsoft-updates.bat</CommandLine>
                     <Order>98</Order>
