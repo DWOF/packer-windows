@@ -210,8 +210,20 @@
  
                 <SynchronousCommand wcm:action="add">
                     <CommandLine>cmd.exe /c reg import a:\wsus.reg</CommandLine>
-                    <Order>97</Order>
+                    <Order>95</Order>
                     <Description>Enable WSUS Updates</Description>
+                </SynchronousCommand>
+
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cmd.exe /c certutil -addstore Root a:\PHTroot.cer</CommandLine>
+                    <Order>96</Order>
+                    <Description>Import PHT Root</Description>
+                </SynchronousCommand>
+
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cmd.exe /c certutil -addstore CA  a:\PHTint.cer</CommandLine>
+                    <Order>97</Order>
+                    <Description>Import PHT Intermediate</Description>
                 </SynchronousCommand>
 
                 <SynchronousCommand wcm:action="add">
