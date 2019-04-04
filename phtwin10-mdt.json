@@ -1,0 +1,64 @@
+{
+    "builders": [
+      {
+        "boot_command": "",
+        "boot_wait": "6m",
+        "communicator": "winrm",
+        "disk_size": "{{user `disk_size`}}",
+        "floppy_files": [
+          "{{user `autounattend`}}",
+          "./floppy/WindowsPowershell.lnk",
+          "./floppy/PinTo10.exe",
+          "./scripts/fixnetwork.ps1",
+          "./scripts/disable-screensaver.ps1",
+          "./scripts/disable-winrm.ps1",
+          "./scripts/enable-winrm.ps1",
+          "./scripts/microsoft-updates.bat",
+          "./scripts/win-updates.ps1",
+          "./scripts/MDT.ps1",
+          "./files/WSUS.reg",
+          "./files/PHTroot.cer",
+          "./files/PHTint.cer"
+        ],
+        "guest_additions_mode": "disable",
+        "headless": "{{user `headless`}}",
+        "iso_checksum": "{{user `iso_checksum`}}",
+        "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
+        "iso_checksum_type": "{{user `iso_checksum_type`}}",
+        "iso_url": "{{user `iso_url`}}",
+        "type": "hyperv-iso",
+        "switch_name": "Ethernet",
+        "vm_name": "windows_10",
+        "winrm_password": "Password",
+        "winrm_timeout": "{{user `winrm_timeout`}}",
+        "winrm_username": "Administrator"
+      }
+    ],
+    "provisioners": [
+        {
+          "scripts": [
+            "./scripts/MDT.ps1"
+          ],
+          "type": "powershell",
+          "valid_exit_codes": [0,16001]
+        },
+       {
+          "inline": ["Write-Host \"Waiting for MDT to finish\""],
+          "type": "powershell",
+          "valid_exit_codes": [0,16001],
+          "pause_before": "60m"
+       }
+      ],
+    "variables": {
+      "autounattend": "./answer_files/10/Autounattend.xml",
+      "disk_size": "61440",
+      "disk_type_id": "1",
+      "headless": "false",
+      "iso_url": "./iso/SW_DVD9_WIN_PRO_ENT_EDU_N_10_1809_64-BIT_ENGLISH_MLF_X21-96501.iso",
+      "iso_checksum_type": "sha256",
+      "iso_checksum": "54B42DBD42C7839B8CF28E256763458AEB1C30CB858ACAA2029A08F8F54E5C28",
+      "restart_timeout": "5m",
+      "vhv_enable": "false",
+      "winrm_timeout": "6h"
+    }
+  }

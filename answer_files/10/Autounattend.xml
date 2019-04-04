@@ -245,6 +245,13 @@
                     <Order>100</Order>
                     <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>
+
+                  <SynchronousCommand wcm:action="add">
+                    <CommandLine>cmd.exe /c wuauclt /reportnow</CommandLine>
+                    <Description>Report Update Status</Description>
+                    <Order>101</Order>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
                 
                 
                 <!-- END WITH WINDOWS UPDATES -->
@@ -260,7 +267,7 @@
             </OEMInformation>
             <!-- Rename computer here. -->
             <ComputerName>Win-10</ComputerName>
-            <TimeZone>Eastern Standard Time</TimeZone>
+            <TimeZone>GMT Standard Time</TimeZone>
             <RegisteredOwner/>
         </component>
         <component xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Microsoft-Windows-Security-SPP-UX" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">

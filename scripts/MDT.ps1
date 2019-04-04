@@ -1,5 +1,5 @@
 #Start MDT Capture
-net use s: '\\QAHMDT01\win10capture$' /user:DOMAIN\SVC_QAHmdtCapture 'Password'
+net use s: '\\QAHMDT01\DeploymentShare$' /user:QAHMDT01\SVC_mdtImageCapture 'Password1$'
 Set-Location -Path S:\Scripts\
 cscript .\litetouch.vbs
 Exit
